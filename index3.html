@@ -8,8 +8,9 @@
 </head>
 <body>
        <div id="app">
-           <input type="text" v-model="message">
-           <p>{{ message }}</p>
+           <label><input type="radio" value="First" v-model="picked">Первый</label>
+           <label><input type="radio" value="Second" v-model="picked">Второй</label>
+           <p>{{ picked }}</p>
         </div>
         <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>       
         <script src="script.js"></script>           

@@ -7,10 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-       <div id="app">
-           <input type="text" v-model="message">
-           <p>{{ message }}</p>
-        </div>
+      <div id="app">
+          <select v-model="language">
+              <option>JavaScript</option>
+              <option>Python</option>
+              <option>C++</option>
+            </select>
+            <p>Язык: {{ Language }}</p>
+        </div>    
         <script src="https://unpkg.com/vue@2.1.8/dist/vue.js"></script>       
         <script src="script.js"></script>           
 </body>
