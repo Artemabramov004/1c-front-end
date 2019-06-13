@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>График</title>
+    <link rel="stylesheet" href="style График.css">
+</head>
+<body>
+    <div id="app">
+        <script type="text/x-tamplate" id="polygraph-template"></script>
+          <g>
+            <polygon: points="points"></polygon>
+            <circle cx="100" cy="100" r="80"></circle>
+            <axis-label
+            v-for="(stat,index) in stats"
+            :stat="stat"
+            :index="index"
+            :total="stats.length"
+            ></axis-label>
+
+            <script type="text/x-template" id="axis-label-template"></script>
+             <text :x="point.x" :y="point.y">{{stat.label}}</text>
+
+             <div id="demo"></div>
+                <svg width="200" height="200"></svg>
+                <polygraph :stat="stats"></polygraph>
+                <div v-for="stat in stats"></div>
+                 <label>{{stat.label}}</label>
+                 <input type="range" v-model="stat.value" min="0" max="100"></input>
+                 <span>{{stat.value}}</span>
+                 <button @click="remove(stat)" class="remove">X</button>
+                <div>
+                 <form id="add">
+                 <input name="newlabel" v-model="newLabel"></input>
+                 <button @click="add">Add a Stat</button>
+                 </form>
+                </div>
+                <p style="font-size:12px">* input[type="range"] requires IE10 or above.</p>
+            </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.5/vue.min.js"></script>    
+        <script src="script График.js"></script>     
+</body>
+</html>
