@@ -1,13 +1,27 @@
 <html>
-	<head>
-		<title>��������</title>	
-		<script type="text/javascript" src="15.js"></script>
-		<link rel="stylesheet" href="style.css" />
-	</head>
-	
-	<body>	
-		<div id="box"></div>
-		<button id="reset">New game</div>
-	</body>
-	
-</html>
+    <head>
+        <script>
+            var a=new Array();
+            for (i=0; i<=3; i++)
+            {
+                a[i]= new Image();
+                a[i].src="img0" +(i + 1) + ".png";
+            }
+            var i=0
+            function Z1(){
+                i++;
+                if (i==4)i=0;
+
+                document.all.myimg.src=a[i].src
+                myimg.style.visibility="";
+                t=setTimeout("Z1()", 4500);
+                }
+                function Start(){
+                    t=setTimeout("Z1()", 4500);
+                }
+             </script>
+    </head>
+    <body onLoad="Start()">
+       <img id="myimg" STYLE="filter:revealTrans(Duration=3, Transition=12);" src="img01.png"><br> 
+       <h1>Замена одного графического объукта на другой</h1>
+</html>    
